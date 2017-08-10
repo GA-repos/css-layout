@@ -99,9 +99,9 @@ View solution [here](http://codepen.io/awhitley1233/pen/EZyvMY)
 
 ![flexbox diagram](img/flexbox-diagram.jpg)
 
-When you declare `display: flex` in a CSS rule, whatever is targeted by that rule becomes a **flex container**.
+When you declare `display: flex;` in a CSS rule, whatever is targeted by that rule becomes a **flex container**.
 
-The flexbox approach differs from the methods described above in that the arrangement of elements is managed by the **parent** container. The child of a **flex container** is called a **flex item**. We can change the way flex items display by setting item-specific properties that will come later in the lesson.
+The flexbox approach differs from the methods described in the CodePen above in that the arrangement of elements is managed by the **parent** container. The child of a **flex container** is called a **flex item**. We can change the way flex items display by setting item-specific properties that will come later in the lesson.
 
 After the `display` property, the most important flexbox property to understand is `flex-direction`. It is very important to remember that the `flex-direction` orients **flex container's main-axis**. The main axis can set to run vertically or horizontally depending on the value of `flex-direction`. All other flex-related properties are defined in terms of the main axis.
 
