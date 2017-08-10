@@ -328,11 +328,11 @@ With flexbox, just change the `flex-direction` for smaller screen sizes, make an
 
 [Example](http://codepen.io/awhitley1233/pen/XpKzqV)
 
-## You Do: [Hyrule Potion Shop](https://github.com/ga-dc/hyrule_potion_shop) (10 minutes / 1:25)
+## You Do: [Hyrule Potion Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop) (10 minutes / 1:25)
 
 ## Break (10 minutes / 1:35)
 
-## You Do (Finish for HW): [Airbnb](https://github.com/ga-wdi-exercises/css-airbnb) (30 minutes / 2:05)
+## You Do (Finish for HW): [Airbnb](https://git.generalassemb.ly/ga-wdi-exercises/css-airbnb) (30 minutes / 2:05)
 
 ## Closing / Questions (5 minutes / 2:10)
 ---
