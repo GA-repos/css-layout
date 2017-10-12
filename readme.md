@@ -300,7 +300,11 @@ If you finish early, try exploring some of the [other flexbox properties](https:
 
 ## Break (10 minutes / 1:10)
 
-## The Holy Grail Layout (5 minutes / 1:15)
+## You Do: [Flexbox Froggy](http://flexboxfroggy.com/) (15 min / 1:25)
+
+(10 min activity, 5 min discussion)
+
+## The Holy Grail Layout (5 minutes / 1:30)
 
 ![holy grail layout](img/holy-grail-layout.png)
 
@@ -328,13 +332,13 @@ With flexbox, just change the `flex-direction` for smaller screen sizes, make an
 
 [Example](http://codepen.io/awhitley1233/pen/XpKzqV)
 
-## You Do: [Hyrule Potion Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop) (10 minutes / 1:25)
+## You Do: [Hyrule Potion Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop) (10 minutes / 1:40)
 
-## Break (10 minutes / 1:35)
+## Break (10 minutes / 1:50)
 
-## You Do (Finish for HW): [Airbnb](https://git.generalassemb.ly/ga-wdi-exercises/css-airbnb) (30 minutes / 2:05)
+## You Do (Finish for HW): [Airbnb](https://git.generalassemb.ly/ga-wdi-exercises/css-airbnb) (30 minutes / 2:20)
 
-## Closing / Questions (5 minutes / 2:10)
+## Closing / Questions (5 minutes / 2:25)
 ---
 
 ## Resources
@@ -345,7 +349,6 @@ With flexbox, just change the `flex-direction` for smaller screen sizes, make an
 * [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
 * [Flexplorer](http://bennettfeely.com/flexplorer/)
 * [Holy Grail Layout - Solved By Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
-* [Flexbox Froggy](http://flexboxfroggy.com/)
 
 Screencasts
 - [Part 1](http://youtu.be/wBlBTO7mqoI)
