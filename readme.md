@@ -343,6 +343,7 @@ With flexbox, just change the `flex-direction` for smaller screen sizes, make an
 
 ## Resources
 
+* [flexbox.io](https://flexbox.io/)
 * [The Ultimate Flexbox Cheatsheet](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
 * [CSS Tricks Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [A Visual Guide to CSS3 Flexbox Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
