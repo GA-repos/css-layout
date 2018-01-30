@@ -369,49 +369,43 @@ Let's take a few minutes to explore this [web app](https://www.inprnt.com/discov
 
 There are a few ways to implement css grid. I'll show you the steps of how I like to do it.  
 
-- To start, you must have a `container` or `parent` element, with at least one `nested` or `child elements inside. 
-- On the container, specify that you are using `display: grid` and what your ***template*** will look like - more specifically, your ***rows*** and ***columns***.  
+- To start, you must have a *container* (or *parent*) element, with at least one *nested* (or *child*) elements inside. 
+- On the container, specify that you are using `display: grid` and what your ***template*** will look like - more specifically, your ***rows*** and ***columns***. Here's an example.
 
 ```css
-  parent {
-    width: 600px;
-    height: 600px;
+  .parent-container {
     display: grid;
     grid-template-rows: 100px 200px 300px;
-    grid-template-columns: 100px 1fr 1fr 100px;
+    grid-template-columns: 100px 1fr 2fr 100px;
   }
 ```
-> Note, parent is not a real html element!
 
-`fr` represents `fraction`, it's a unit that will evenly span the remainder of the space.  
+`fr` represents `fraction`, it's a unit that will evenly span the remainder of the space. 
 
-Here we have specified ***3 rows***, taking up 100, 200, and 300 pixels respectively. We also specified ***4 columns***, giving us a total of ***12 cells***.  
+Here we have specified ***3 rows***, taking up 100, 200, and 300 pixels respectively. We also specified ***4 columns***, giving us a total of ***12 cells***. `grid-template` also takes other units like `%`, `rem`, and `auto`. For now we will focus on `px` and `fr` units.  You can also use `repeat` to specify multiple rows or columns of one size like this `repeat(5, 1fr)`
 
-`grid-template` also takes other units like vh, and em, etc. You can also use `repeat` to specify multiple rows or columns of one size like this `repeat(5, 1fr)`
+On the *child* elements, you can specify *where* the *cells* are located and the *size* you want them to be.  I like to follow this pattern...
 
-Now, on the *child* elements, you can specify *where* the *cells* are located and the *size* you want them to be.  I like to follow this pattern...
-
-`grid-row:` `{what row to start on}` `/ span` `{how many rows it occupies}`
+`grid-row:` {where to start} `/ span` {size}
 > In between the `{}`s you would place numbers.
 > The same would work for `grid-column`
 
 So something like this on a *child* element...
 ```css
-  child {
+  .child-item {
     grid-row: 1 / span 1;
     grid-column: 1 / span 2;
   }
 ```
-> Note child is not a real html element!
 
 Now the header takes up 1 row, starting at row 1, and takes up 2 columns, starting at row 1. 
 
-We could also write `grid-row: 1;` for short, if your element only spans `1 row`.
+We could also write `grid-row: 1;` for short, if your element only spans 1 row.
 
 ### We do: Griddle me this (15 min / 2:15)
-Now let's follow along and try to make our `holy grail` website design using Grid layout.  We need a header, a footer, two columns, and a main section.  The starter code has been set up for you [here](https://codepen.io/perryf/pen/rJNZpw)
+Now let's follow along and try to make our *holy grail* website design using Grid layout. We will need a header, a footer, two side columns, and a main section.  The starter code has been set up for you [here](https://codepen.io/perryf/pen/rJNZpw)
 
-Take a moment to look over the `html` and `css`. 
+Take a moment to look over the files.  
 
 Now let's add our `grid-template` code to our parent element.  
 
@@ -424,7 +418,6 @@ Now let's add our `grid-template` code to our parent element.
 ```
 
 Now let's figure out how to format our `header`.  We want the header to take up 1 row and 3 columns.  Let's give it some color too.  
-
 ```css
 header {
   grid-row: 1;
@@ -434,7 +427,6 @@ header {
 ```
 
 Now onto our left column.  That will only take up 1 column and one row, starting at row 2.  
-
 ```css
 .left {
   grid-row: 2;
@@ -444,17 +436,15 @@ Now onto our left column.  That will only take up 1 column and one row, starting
 ```
 
 The right column can be positioned in a very similar fashion.  
-
 ```css
   .right {
     grid-row: 2;
     grid-column: 3;
-    background: darkred;
+    background: mistyrose;
   }
 ```
 
-The main section is the largest section (except on tiny screens) but really only takes up one row and one column.  
-
+The main section is the largest section (except on tiny screens) but really only takes up one row and one column. 
 ```css
   main {
     grid-row: 2;
@@ -464,7 +454,6 @@ The main section is the largest section (except on tiny screens) but really only
 ```
 
 Lastly, our footer will take up the entire bottom row, spanning 3 columns.  
-
 ```css
   footer {
     grid-row: 3;
