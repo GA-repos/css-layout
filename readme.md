@@ -6,20 +6,26 @@
 - Contrast flex containers and flex items.
 - Given a desktop-first webpage, make it look presentable on mobile devices (and vice-versa) with as little CSS as possible.
 - Explain what is meant by the "Holy Grail Layout".
+- Explain what CSS Grid is.
+- Use CSS Grid to create a page layout.
 
 ## Framing
 
 HTML was created as a document-oriented language. CSS emerged as a way to use language to precisely define stylistic features in a way that wouldn't clutter the semantic content or worse destroy the semantic value all together. CSS pursued the related goal of normalizing styling across browsers. In many ways it achieves this goal well; yet it remains one of the most frustrating parts of web development.
 
-![Obligatory Peter Griffin CSS GIF](http://2.bp.blogspot.com/-41v6n3Vaf5s/UeRN_XJ0keI/AAAAAAAAN2Y/YxIHhddGiaw/s1600/css.gif)
+[Obligatory Peter Griffin CSS GIF](http://2.bp.blogspot.com/-41v6n3Vaf5s/UeRN_XJ0keI/AAAAAAAAN2Y/YxIHhddGiaw/s1600/css.gif)
 
-It's difficult to establish new CSS standards. The [CSS Working Group](https://en.wikipedia.org/wiki/CSS_Working_Group) has a hard time agreeing on anything and the problem of cross-browser consistency perpetuates this problem.
+It's difficult to establish new CSS standards. The [CSS Working Group](https://en.wikipedia.org/wiki/CSS_Working_Group) works to further the language of CSS, but with competing views of the members and the problem of cross-browser consistency, this can take considerable time.  
 
 Alignment has traditionally been one of the key contributors to this aggravation. In the last decade, the importance of alignment has sky rocketed.
 
 > Why might this be?
 
-Fortunately, Flexbox, a layout mode introduced with CSS3, and at this point is widely implemented. There is a slight learning curve but it supplants whole families of hacks or libraries necessary to achieve intricate layout in an intuitive and maintainable way.
+Today we'll be learning about two modern CSS tools to help with making an easier-to-write and more versatile website layout.  
+
+Flexbox, a layout mode introduced with CSS3, and at this point is widely implemented across different browsers. CSS Grid, an even newer layout mode which borrows from the best parts of CSS bootstrap, is also becoming popular.  It is not as widely implemented as Flexbox but it does work on most modern browsers.  
+
+> We can check https://caniuse.com/ to see what browsers support what we want to implement.  
 
 ## Problem 1: Vertical Alignment (15 minutes / 0:15)
 
@@ -30,6 +36,9 @@ Let's start out by talking about a problem that anybody who has written CSS has 
 ![centered div](img/centered_div.png)
 
 Example on [Codepen](http://codepen.io/awhitley1233/pen/ygJzJW)
+
+### You Do: 
+Take about **10 minutes** to try to get the div in this example centered like the image above. Make sure it's still centered vertically and horizontally when you change the screen size.
 
 #### You Tell Me: What Should I Try?
 
@@ -139,7 +148,7 @@ When text is wrapping, `align-content` controls how the rows or columns are arra
 
 I want my footer to lie along the bottom of my page. Once I've accomplished that, I want to evenly distribute the content boxes horizontally inside of the `<main>` element.
 
-![flexbox layout](img/flex_box_layout.png)
+![flexbox layout](img/flex-box-example2.png)
 
 [Example on CodePen](http://codepen.io/awhitley1233/pen/ygJzqy)
 
@@ -336,9 +345,139 @@ With flexbox, just change the `flex-direction` for smaller screen sizes, make an
 
 ## Break (10 minutes / 1:50)
 
-## You Do (Finish for HW): [Airbnb](https://git.generalassemb.ly/ga-wdi-exercises/css-airbnb) (30 minutes / 2:20)
+## CSS Grid
 
-## Closing / Questions (5 minutes / 2:25)
+### What is CSS-Grid Layout? (10 min / 2:00)
+
+From the [www.w3.org](https://www.w3.org/TR/css-grid-1/) website...
+
+"Grid Layout is a new layout model for CSS that has powerful abilities to control the sizing and positioning of boxes and their contents. Unlike Flexible Box Layout, which is single-axis–oriented, Grid Layout is optimized for 2-dimensional layouts: those in which alignment of content is desired in both dimensions."
+
+With Grid layout, you can divide up the screen into `rows` and `columns` of sizes of your choosing, and then specify how many rows and columns each `cell` takes up. Sizings can be fixed, or dynamic, allowing you to create modern looking, versatile websites.  
+
+*Example of **flexbox** layout*
+![flex layout example](img/flex-layout-ex.png) 
+
+*example of **grid** layout*
+![grid layout example](img/grid-layout-ex.png)
+> Notice how the grid layout allows the cell on the right to take up multiple rows.  
+
+Let's take a few minutes to explore this [web app](https://www.inprnt.com/discover/) built with Grid layout.
+> This site was built by a former GA student using CSS-Grid layout, Flexbox, and React.  
+
+There are a few ways to implement the grid way out. I'll show you the steps of how I like to do it.  
+
+- To start, you must have a `container` or `parent` element, with at least one `nested` or `child elements inside. 
+- On the container, specify that you are using `display: grid` and what your ***template*** will look like - more specifically, your ***rows*** and ***columns***.  
+
+```css
+  parent {
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: 100px 200px 300px;
+    grid-template-columns: 100px 1fr 1fr 100px;
+  }
+```
+> Note, parent is not a real html element!
+
+`fr` represents `fraction`, it's a unit that will evenly span the remainder of the space.  
+
+Here we have specified ***3 rows***, taking up 100, 200, and 300 pixels respectively. We also specified ***4 columns***, giving us a total of ***12 cells***.  
+
+`grid-template` also takes other units like vh, and em, etc. You can also use `repeat` to specify multiple rows or columns of one size like this `repeat(5, 1fr)`
+
+Now, on the *child* elements, you can specify *where* the *cells* are located and the *size* you want them to be.  I like to follow this pattern...
+
+`grid-row:` `{what row to start on}` `/ span` `{how many rows it occupies}`
+> In between the `{}`s you would place numbers.
+> The same would work for `grid-column`
+
+So something like this on a *child* element...
+```css
+  child {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+  }
+```
+> Note child is not a real html element!
+
+Now the header takes up 1 row, starting at row 1, and takes up 2 columns, starting at row 1. 
+
+We could also write `grid-row: 1;` for short, if your element only spans `1 row`.
+
+### We do: Griddle me this (15 min / 2:15)
+Now let's follow along and try to make our `holy grail` website design using Grid layout.  We need a header, a footer, two columns, and a main section.  The starter code has been set up for you [here](https://codepen.io/perryf/pen/rJNZpw)
+
+Take a moment to look over the `html` and `css`. 
+
+Now let's add our `grid-template` code to our parent element.  
+
+```css
+  body {
+    display: grid;
+    grid-template-rows: 80px 1fr 80px;
+    grid-template-columns: 100px 1fr 100px;
+  }
+```
+
+Now let's figure out how to format our `header`.  We want the header to take up 1 row and 3 columns.  Let's give it some color too.  
+
+```css
+header {
+  grid-row: 1;
+  grid-column: 1 / span 3;
+  background: steelblue;
+}
+```
+
+Now onto our left column.  That will only take up 1 column and one row, starting at row 2.  
+
+```css
+.left {
+  grid-row: 2;
+  grid-column: 1;
+  background: lightseagreen;
+}
+```
+
+The right column can be positioned in a very similar fashion.  
+
+```css
+  .right {
+    grid-row: 2;
+    grid-column: 3;
+    background: darkred;
+  }
+```
+
+The main section is the largest section (except on tiny screens) but really only takes up one row and one column.  
+
+```css
+  main {
+    grid-row: 2;
+    grid-column: 2;
+    background: lemonchiffon;
+  }
+```
+
+Lastly, our footer will take up the entire bottom row, spanning 3 columns.  
+
+```css
+  footer {
+    grid-row: 3;
+    grid-column: 1 / span 3;
+    background: rebeccapurple;
+  }
+```
+
+solution on [codepen](https://codepen.io/perryf/pen/eVYbGv)
+
+## You Do: [CSS Grid Art](https://git.generalassemb.ly/ga-wdi-exercises/css_grid_art) (15 min / 2:30)
+
+## Closing / Questions
+
+## Bonus! [CSS Grid Garden](http://cssgridgarden.com/) 
 ---
 
 ## Resources
@@ -350,11 +489,9 @@ With flexbox, just change the `flex-direction` for smaller screen sizes, make an
 * [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
 * [Flexplorer](http://bennettfeely.com/flexplorer/)
 * [Holy Grail Layout - Solved By Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
+* [The CSS `grid` Module](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [Wes Bos Teaches CSS-Grid](http://wesbos.com/announcing-my-css-grid-course/)
 
 Screencasts
 - [Part 1](http://youtu.be/wBlBTO7mqoI)
 - [Part 2](http://youtu.be/_I58MXDnBEs)
-
-## Further Reading
-
-* [The CSS `grid` Module](https://css-tricks.com/snippets/css/complete-guide-grid/)
