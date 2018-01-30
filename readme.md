@@ -356,16 +356,18 @@ From the [www.w3.org](https://www.w3.org/TR/css-grid-1/) website...
 With Grid layout, you can divide up the screen into `rows` and `columns` of sizes of your choosing, and then specify how many rows and columns each `cell` takes up. Sizings can be fixed, or dynamic, allowing you to create modern looking, versatile websites.  
 
 *Example of **flexbox** layout*
+
 ![flex layout example](img/flex-layout-ex.png) 
 
 *example of **grid** layout*
+
 ![grid layout example](img/grid-layout-ex.png)
 > Notice how the grid layout allows the cell on the right to take up multiple rows.  
 
 Let's take a few minutes to explore this [web app](https://www.inprnt.com/discover/) built with Grid layout.
 > This site was built by a former GA student using CSS-Grid layout, Flexbox, and React.  
 
-There are a few ways to implement the grid way out. I'll show you the steps of how I like to do it.  
+There are a few ways to implement css grid. I'll show you the steps of how I like to do it.  
 
 - To start, you must have a `container` or `parent` element, with at least one `nested` or `child elements inside. 
 - On the container, specify that you are using `display: grid` and what your ***template*** will look like - more specifically, your ***rows*** and ***columns***.  
