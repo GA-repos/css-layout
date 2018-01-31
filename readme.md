@@ -269,7 +269,7 @@ If you finish early, try exploring some of the [other flexbox properties](https:
 
   > How multiple rows or columns are spaced along the cross-axis. Takes the same properties as justify-content.
   >
-  > [Example](http://codepen.io/asim-coder/pen/WrMNWR)
+  > [Example](https://codepen.io/perryf/pen/RQNYPM)
 
 </details>
 
@@ -278,7 +278,7 @@ If you finish early, try exploring some of the [other flexbox properties](https:
 
   > If the flex container is too big for all the flex items, flex-grow specifies the relative proportion a particular flex item will occupy
   >
-  > [Example](https://codepen.io/raphaelgoetter/pen/yyMOOp)
+  > [Example](https://codepen.io/perryf/pen/aqzaRV)
 
 </details>
 
@@ -287,7 +287,7 @@ If you finish early, try exploring some of the [other flexbox properties](https:
 
   > Defines flex item behavior if they expand beyond a single line.
   >
-  > [Example](https://codepen.io/raphaelgoetter/pen/yyMOOp)
+  > [Example](https://codepen.io/perryf/pen/vdEzMv)
 
 </details>
 
@@ -303,7 +303,7 @@ If you finish early, try exploring some of the [other flexbox properties](https:
 
   > Specifies how big the flex items "want" to be, or the initial size of a flex item
   >
-  > [Example](https://codepen.io/raphaelgoetter/pen/yyMOOp)
+  > [Example](http://gedd.ski/post/the-difference-between-width-and-flex-basis/)
 
 </details>
 
@@ -369,36 +369,48 @@ Let's take a few minutes to explore this [web app](https://www.inprnt.com/discov
 
 There are a few ways to implement css grid. I'll show you the steps of how I like to do it.  
 
-- To start, you must have a *container* (or *parent*) element, with at least one *nested* (or *child*) elements inside. 
-- On the container, specify that you are using `display: grid` and what your ***template*** will look like - more specifically, your ***rows*** and ***columns***. Here's an example.
+1. To start, you must have a *container* (or *parent*) element, with at least one *nested* (or *child*) elements inside. 
+
+```html
+<div class="parent">
+  <div class="child-one">1</div>
+  <div class="child-two">2</div>
+  <div class="child-three">3</div>
+</div>
+```
+
+2. On the container, specify that you are using `display: grid` and what your ***template*** will look like - more specifically, your ***rows*** and ***columns***. Here's an example.
 
 ```css
-  .parent-container {
-    display: grid;
-    grid-template-rows: 100px 200px 300px;
-    grid-template-columns: 100px 1fr 2fr 100px;
-  }
+.parent {
+  display: grid;
+  grid-template-rows: 100px 200px 300px;
+  grid-template-columns: 100px 1fr 2fr 100px;
+}
 ```
 
 `fr` represents `fraction`, it's a unit that will evenly span the remainder of the space. 
 
 Here we have specified ***3 rows***, taking up 100, 200, and 300 pixels respectively. We also specified ***4 columns***, giving us a total of ***12 cells***. `grid-template` also takes other units like `%`, `rem`, and `auto`. For now we will focus on `px` and `fr` units.  You can also use `repeat` to specify multiple rows or columns of one size like this `repeat(5, 1fr)`
 
-On the *child* elements, you can specify *where* the *cells* are located and the *size* you want them to be.  I like to follow this pattern...
+3. the *child* elements, you can specify *where* the *cells* are located and the *size* you want them to be.  I like to follow this pattern...
 
-`grid-row:` {where to start} `/ span` {size}
-> In between the `{}`s you would place numbers.
-> The same would work for `grid-column`
+```css
+selector {
+  grid-row: where-to-start / span size;
+}
+```
+>same would work for `grid-column`
 
 So something like this on a *child* element...
 ```css
-  .child-item {
-    grid-row: 1 / span 1;
-    grid-column: 1 / span 2;
-  }
+.child {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+}
 ```
 
-Now the header takes up 1 row, starting at row 1, and takes up 2 columns, starting at row 1. 
+This element takes up 1 row, starting at row 1, and takes up 2 columns, starting at column 1. 
 
 We could also write `grid-row: 1;` for short, if your element only spans 1 row.
 
@@ -482,6 +494,7 @@ solution on [codepen](https://codepen.io/perryf/pen/eVYbGv)
 * [Holy Grail Layout - Solved By Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
 * [The CSS `grid` Module](https://css-tricks.com/snippets/css/complete-guide-grid/)
 * [Wes Bos Teaches CSS-Grid](http://wesbos.com/announcing-my-css-grid-course/)
+* [Learn CSS Grid](http://learncssgrid.com/)
 
 Screencasts
 - [Part 1](http://youtu.be/wBlBTO7mqoI)
