@@ -9,7 +9,7 @@
 - Explain what CSS Grid is.
 - Use CSS Grid to create a page layout.
 
-## Framing
+## Framing (5 min / 2:35)
 
 HTML was created as a document-oriented language. CSS emerged as a way to use language to precisely define stylistic features in a way that wouldn't clutter the semantic content or worse destroy the semantic value all together. CSS pursued the related goal of normalizing styling across browsers. In many ways it achieves this goal well; yet it remains one of the most frustrating parts of web development.
 
@@ -23,11 +23,11 @@ Alignment has traditionally been one of the key contributors to this aggravation
 
 Today we'll be learning about two modern CSS tools to help with making an easier-to-write and more versatile website layout.  
 
-Flexbox, a layout mode introduced with CSS3, and at this point is widely implemented across different browsers. CSS Grid, an even newer layout mode which borrows from the best parts of CSS bootstrap, is also becoming popular.  It is not as widely implemented as Flexbox but it does work on most modern browsers.  
+Flexbox, a layout mode introduced with CSS3, is at this point widely implemented across different browsers. CSS Grid, an even newer layout mode which borrows from the best parts of CSS bootstrap, is also becoming popular.  It is not as widely implemented as Flexbox but it does work on most modern browsers.  
 
 > We can check https://caniuse.com/ to see what browsers support what we want to implement.  
 
-## Problem 1: Vertical Alignment (15 minutes / 0:15)
+## Problem 1: Vertical Alignment (15 minutes / 2:50)
 
 Let's start out by talking about a problem that anybody who has written CSS has likely dealt with:
 
@@ -104,7 +104,7 @@ body {
 
 View solution [here](http://codepen.io/awhitley1233/pen/EZyvMY)
 
-## How It Works (10 minutes / 0:10)
+## How It Works (10 min / 3:00)
 
 ![flexbox diagram](img/flexbox-diagram.jpg)
 
@@ -144,7 +144,7 @@ When text is wrapping, `align-content` controls how the rows or columns are arra
 
 > That's a lot of CSS properties! Don't worry, you're not expected to memorize all of them. Being a developer is less about knowing everything off the top of your head and more about knowing best practices and where to find more info [Here's a great resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-## Problem 2: Make the Footer Stick (10 minutes / 0:35)
+## Problem 2: Make the Footer Stick (10 min / 3:10)
 
 I want my footer to lie along the bottom of my page. Once I've accomplished that, I want to evenly distribute the content boxes horizontally inside of the `<main>` element.
 
@@ -236,7 +236,7 @@ main {
 
 [Solution on CodePen](http://codepen.io/awhitley1233/pen/PWzOPg)
 
-## You Do: More Flexbox Properties (25 minutes / 1:00)
+## You Do: More Flexbox Properties (25 minutes / 3:35)
 
 Time for you to research some more Flexbox properties. You will be split into groups and assigned one of the following flex properties...
 
@@ -248,7 +248,7 @@ Time for you to research some more Flexbox properties. You will be split into gr
 Your task is to...
 * Come up with [ELI5 ("Explain Like I'm 5")](https://www.reddit.com/r/explainlikeimfive) definition for the property.
 * List the different values this property can take.
-* Create [a Codepen](http://codepen.io) demonstrating the property's usage, then post it in the `#wdi20-discussion` Slack channel.
+* Create [a Codepen](http://codepen.io) demonstrating the property's usage, then post it in the `#wdi21-discussion` Slack channel.
 * If possible, practice using some of the flex properties we covered in the previous section.
 
 > You will need to [create a Codepen account](https://codepen.io/accounts/signup) in order to save your pen and share the link.
@@ -307,13 +307,12 @@ If you finish early, try exploring some of the [other flexbox properties](https:
 
 </details>
 
-## Break (10 minutes / 1:10)
+## Break (10 min / 3:45)
 
-## You Do: [Flexbox Froggy](http://flexboxfroggy.com/) (15 min / 1:25)
+## You Do: [Flexbox Froggy](http://flexboxfroggy.com/) (10 min / 3:55)
 
-(10 min activity, 5 min discussion)
 
-## The Holy Grail Layout (5 minutes / 1:30)
+## The Holy Grail Layout (5 min / 4:00)
 
 ![holy grail layout](img/holy-grail-layout.png)
 
@@ -341,13 +340,13 @@ With flexbox, just change the `flex-direction` for smaller screen sizes, make an
 
 [Example](http://codepen.io/awhitley1233/pen/XpKzqV)
 
-## You Do: [Hyrule Potion Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop) (10 minutes / 1:40)
+## You Do: [Hyrule Potion Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop) (10 min / 4:10)
 
-## Break (10 minutes / 1:50)
+## Break (10 min / 4:20)
 
 ## CSS Grid
 
-### What is CSS-Grid Layout? (10 min / 2:00)
+### What is CSS-Grid Layout? (10 min / 4:30)
 
 From the [www.w3.org](https://www.w3.org/TR/css-grid-1/) website...
 
@@ -414,7 +413,7 @@ This element takes up 1 row, starting at row 1, and takes up 2 columns, starting
 
 We could also write `grid-row: 1;` for short, if your element only spans 1 row.
 
-### We do: Griddle me this (15 min / 2:15)
+### We do: Griddle me this (10 min / 4:40)
 Now let's follow along and try to make our *holy grail* website design using Grid layout. We will need a header, a footer, two side columns, and a main section.  The starter code has been set up for you [here](https://codepen.io/perryf/pen/rJNZpw)
 
 Take a moment to look over the files.  
@@ -476,9 +475,14 @@ Lastly, our footer will take up the entire bottom row, spanning 3 columns.
 
 solution on [codepen](https://codepen.io/perryf/pen/eVYbGv)
 
-## You Do: [CSS Grid Art](https://git.generalassemb.ly/ga-wdi-exercises/css_grid_art) (15 min / 2:30)
+## You Do: [CSS Grid Art](https://git.generalassemb.ly/ga-wdi-exercises/css_grid_art) (15 min / 4:55)
 
-## Closing / Questions
+## Closing / Questions (Rest of Class / 5:00)
+- Why is alignment so important with modern web development?
+- What problems do flexbox and css grid solve?
+- Where do I put `display: flex` or `display: grid`?
+- With flexbox, what are some properties that `justify-content` can take?
+- Explain how to place an item into a grid container.
 
 ## Bonus! [CSS Grid Garden](http://cssgridgarden.com/) 
 ---
