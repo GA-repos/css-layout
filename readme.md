@@ -340,7 +340,7 @@ With flexbox, just change the `flex-direction` for smaller screen sizes, make an
 
 [Example](http://codepen.io/awhitley1233/pen/XpKzqV)
 
-## You Do: [Hyrule Potion Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop) (10 min / 4:10)
+## You Do: [Hyrule Potion Shop](https://git.generalassemb.ly/dc-wdi-fundamentals/hyrule-potion-shop) (10 min / 4:10)
 
 ## Break (10 min / 4:20)
 
@@ -475,7 +475,7 @@ Lastly, our footer will take up the entire bottom row, spanning 3 columns.
 
 solution on [codepen](https://codepen.io/perryf/pen/eVYbGv)
 
-## You Do: [CSS Grid Art](https://git.generalassemb.ly/ga-wdi-exercises/css_grid_art) (15 min / 4:55)
+## You Do: [CSS Grid Art](https://git.generalassemb.ly/dc-wdi-fundamentals/css-grid-art) (15 min / 4:55)
 
 ## Closing / Questions (Rest of Class / 5:00)
 - Why is alignment so important with modern web development?
