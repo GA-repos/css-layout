@@ -15,7 +15,7 @@ style the elements of documents without interfering with the semantic meaning of
 them. In many ways it achieves this goal well; yet it remains one of the most
 frustrating parts of web development:
 
-![Obligatory Peter Griffin CSS GIF](http://2.bp.blogspot.com/-41v6n3Vaf5s/UeRN_XJ0keI/AAAAAAAAN2Y/YxIHhddGiaw/s1600/css.gif)
+![Obligatory Peter Griffin CSS GIF](https://2.bp.blogspot.com/-41v6n3Vaf5s/UeRN_XJ0keI/AAAAAAAAN2Y/YxIHhddGiaw/s1600/css.gif)
 
 Aligning items with CSS has traditionally been one of the key contributors to
 this aggravation. For a long time, there wasn't a good way to layout elements
