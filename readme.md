@@ -8,7 +8,7 @@
 - Use CSS Grid to create a page layout.
 - Explain when to use Flexbox versus CSS Grid
 
-## Framing (5 min / 2:35)
+## Framing (5 min / 0:05)
 
 HTML was created as a document-oriented markup language. CSS emerged as a way to
 style the elements of documents without interfering with the semantic meaning of
@@ -34,7 +34,7 @@ work on most modern browsers.
 > We can check https://caniuse.com/ to see what browsers support what we want to
 > implement.
 
-## Problem 1: Vertical Alignment (15 minutes / 2:50)
+## Problem 1: Vertical Alignment (15 min / 0:20)
 
 Let's start out by talking about a problem that anybody who has written CSS has
 likely dealt with:
@@ -133,12 +133,14 @@ body {
 
 View solution [here](http://codepen.io/awhitley1233/pen/EZyvMY)
 
-## How It Works (10 min / 3:00)
+## How It Works (10 min / 0:30)
 
 ![flexbox diagram](assets/flexbox-diagram.jpg)
 
 When you declare `display: flex;` in a CSS rule, whatever element is targeted by
 that rule becomes a **flex container**.
+
+That means that all of the flex container's **immediate** children can have flex properties applied to them.
 
 The flexbox approach differs from the methods described in the CodePen above in
 that the arrangement of elements is managed by the **parent** container. The
@@ -202,7 +204,7 @@ arranged relative to the cross-axis: `flex-start`, `flex-end`, `stretch`
 [Open this Codepen](https://codepen.io/ZakkMann/pen/OZBpob) to explore the
 different Flexbox properties and see how they work.
 
-## Problem 2: Make the Footer Stick (10 min / 3:10)
+## Problem 2: Make the Footer Stick (10 min / 0:40)
 
 I want my footer to lie along the bottom of my page. Once I've accomplished
 that, I want to evenly distribute the content boxes horizontally inside of the
@@ -297,7 +299,9 @@ main {
 
 [Solution on CodePen](http://codepen.io/awhitley1233/pen/PWzOPg)
 
-## You Do: More Flexbox Properties (25 minutes / 3:35)
+## You Do: More Flexbox Properties (25 minutes / 1:05)
+
+> 10 min research, 15 min presentations
 
 Time for you to research some more Flexbox properties. You will be split into
 groups and assigned one of the following flex properties...
@@ -312,11 +316,11 @@ Your task is to:
 - Come up with [ELI5 ("Explain Like I'm 5")](https://dev.to/t/explainlikeimfive)
   definition for the property (and maybe write one!).
 - Create [a Codepen](http://codepen.io) demonstrating the property's usage, then
-  post it in the `#wdi21-discussion` Slack channel.
+  post it in the `#wdi25-discussion` Slack channel.
 - If possible, practice using some of the flex properties we covered in the
   previous section.
 
-> You will need to [create a Codepen
+> You will need to [create a free Codepen
 > account](https://codepen.io/accounts/signup) in order to save your pen and
 > share the link.
 
@@ -387,9 +391,9 @@ assigned in this exercise.
 
 </details>
 
-## Break (10 min / 3:45)
+## Break (10 min / 1:15)
 
-## The Holy Grail Layout (5 min / 4:00)
+## The Holy Grail Layout (5 min / 1:20)
 
 ![holy grail layout](assets/holy-grail-layout.png)
 
@@ -430,7 +434,7 @@ done!
 
 ## CSS Grid
 
-### What is CSS-Grid Layout? (10 min / 4:30)
+### What is CSS-Grid Layout? (10 min / 1:30)
 
 From the [www.w3.org](https://www.w3.org/TR/css-grid-1/) website:
 
@@ -456,7 +460,7 @@ looking, versatile websites.
 > Notice that the grid items are aligned (rather than filling up the available
 > space) and that cells can take up multiple rows or columns
 
-## You Do: Explore the source code
+## You Do: Explore the source code (5 min / 1:35)
 
 Let's take a few minutes to [explore this web
 app](https://www.inprnt.com/discover/) built with Grid layout.
@@ -523,14 +527,18 @@ at column 1.
 
 We could also write `grid-row: 1;` for short, if your element only spans 1 row.
 
-### We do: Griddle me this (10 min / 4:40)
+### You do: Griddle me this (10 min / 1:45)
 
 Now let's follow along and try to make our *holy grail* website design using
 Grid layout. We will need a header, a footer, two side columns, and a main
 section. The starter code has been set up for you
 [here](https://codepen.io/perryf/pen/rJNZpw)
 
-Take a moment to look over the files.
+Using the grid concepts we just learned, see if you can spend a few minutes getting the holy grail layout built.
+
+> Try it! Don't read ahead! We'll go over it next.
+
+### We do: Griddle me this (10 min / 1:55)
 
 Now let's add our `grid-template` code to our parent element.
 
@@ -597,7 +605,9 @@ footer {
 
 Solution on [codepen](https://codepen.io/perryf/pen/eVYbGv)
 
-## You Do: [CSS Grid Art](https://git.generalassemb.ly/dc-wdi-fundamentals/css-grid-art) (15 min / 4:55)
+## You Do: [CSS Grid Art](https://git.generalassemb.ly/dc-wdi-fundamentals/css-grid-art) (20 min / 2:15)
+
+Check out the link and work through it for the next 20 minutes.
 
 ## Closing / Questions (Rest of Class / 5:00)
 
