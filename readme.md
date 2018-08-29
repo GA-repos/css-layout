@@ -609,7 +609,11 @@ Solution on [codepen](https://codepen.io/perryf/pen/eVYbGv)
 
 Check out the link and work through it for the next 20 minutes.
 
-## Closing / Questions (Rest of Class / 5:00)
+## Closing / Questions (Rest of Class / 2:30)
+
+You don't have to pick between flexbox and grid. You can use both on the same page, in different elements. 
+
+You can even use one inside of the other! A common practice is to use Grid for the page layout, and flexbox for smaller page components.
 
 - Why is alignment so important with modern web development?
 - What problems do flexbox and css grid solve?
