@@ -297,11 +297,14 @@ main {
 }
 ```
 
+Now we have two **flex containers**: `main` and `body`. By setting `display: flex` on main we can tell the three `section` elements to be controlled as flex items.
+
+
 [Solution on CodePen](http://codepen.io/awhitley1233/pen/PWzOPg)
 
 ## You Do: More Flexbox Properties (25 minutes / 1:05)
 
-> 10 min research, 15 min presentations
+> 15 min research, 10 min presentations
 
 Time for you to research some more Flexbox properties. You will be split into
 groups and assigned one of the following flex properties...
@@ -316,7 +319,7 @@ Your task is to:
 - Come up with [ELI5 ("Explain Like I'm 5")](https://dev.to/t/explainlikeimfive)
   definition for the property (and maybe write one!).
 - Create [a Codepen](http://codepen.io) demonstrating the property's usage, then
-  post it in the `#wdi25-discussion` Slack channel.
+  post it in the `#sei29-discussion` Slack channel.
 - If possible, practice using some of the flex properties we covered in the
   previous section.
 
@@ -470,14 +473,16 @@ app](https://www.inprnt.com/discover/) built with Grid layout.
 There are a few ways to implement css grid. I'll show you the steps of how I
 like to do it.
 
+Feel free to code along in codepen.
+
 1. To start, you must have a *container* (or *parent*) element, with at least
    one *nested* (or *child*) elements inside.
 
 ```html
 <div class="parent">
-  <div class="child-one">1</div>
-  <div class="child-two">2</div>
-  <div class="child-three">3</div>
+  <div class="child child-one">1</div>
+  <div class="child child-two">2</div>
+  <div class="child child-three">3</div>
 </div>
 ```
 
@@ -516,7 +521,7 @@ selector {
 So something like this on a *child* element:
 
 ```css
-.child {
+.child-one {
   grid-row: 1 / span 1;
   grid-column: 1 / span 2;
 }
