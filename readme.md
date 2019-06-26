@@ -1,14 +1,24 @@
+[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+
 # Flexbox & Grid
 
-## Learning Objectives
+Now that we have the basics of HTML and CSS down, it's time to start exploring
+some of the more advanced aspects of CSS. For a long time, using CSS to layout
+HTML elements was a really challenging task, involving a lot of `float`s with
+margins and padding. We're going to use Flexbox and CSS Grid, which make this
+easier!
 
-- Explain what Flexbox is and what problem it solves
-- Use Flexbox to layout HTML elements
-- Explain what CSS Grid is and what problem it solves
-- Use CSS Grid to create a page layout.
-- Explain when to use Flexbox versus CSS Grid
+## Objectives
 
-## Framing (5 min / 0:05)
+By the end of this, developers should be able to:
+
+* Explain what Flexbox is and what problem it solves
+* Use Flexbox to layout HTML elements
+* Explain what CSS Grid is and what problem it solves
+* Use CSS Grid to create a page layout.
+* Explain when to use Flexbox versus CSS Grid
+
+## Introduction
 
 HTML was created as a document-oriented markup language. CSS emerged as a way to
 style the elements of documents without interfering with the semantic meaning of
@@ -23,7 +33,7 @@ using CSS despite alignment being an increasingly important part of web design.
 
 Today we'll be learning about two modern tools for aligning content on the web.
 
-**Flexbox**, a layout mode introduced with CSS 3, is great for layout out
+**Flexbox**, a layout mode introduced with CSS3, is great for layout out
 elements in common UI elements. It is at this point widely implemented across
 different browsers.
 
@@ -40,7 +50,7 @@ Let's start out by talking about a problem that anybody who has written CSS has
 likely dealt with:
 
 **I have a `div`. I would like to center it vertically and horizontally on my
-page.** The end result should look something like this...
+page.** The end result should look something like this:
 
 ![centered div](assets/centered_div.png)
 
@@ -82,16 +92,16 @@ div {
 
 <details>
 
-<summary><strong>These might work...</strong></summary>
+<summary><strong>These might work:</strong></summary>
 
 > **Padding**: The simplest approach would be to set equal padding on the top
 >and bottom of the container (body) element. We would need to know the exact
 >height of the element and container in order to get this exactly right. This
 >can also get tedious when there is more than one element in a container.
->
+
 >**Margin**: Similarly, we could add some margin to the element we are trying to
 >center. The same issues remain.
->
+
 >**Absolute Positioning**: You could use properties like `top` and `left` to
 >position an element in the center. This, however, removes it from the document
 >flow.
@@ -100,11 +110,11 @@ div {
 
 <details>
 
-<summary><strong>These could work in other scenarios...</strong></summary>
+<summary><strong>These could work in other scenarios:</strong></summary>
 
 > **`line-height`**: When vertically centering a single line of text, you can
 >set the line-height to that of the whole container.
->
+
 >**`vertical-align`**: Used to align words within a line of text (e.g.,
 >superscript, subscript).
 
@@ -140,7 +150,8 @@ View solution [here](http://codepen.io/awhitley1233/pen/EZyvMY)
 When you declare `display: flex;` in a CSS rule, whatever element is targeted by
 that rule becomes a **flex container**.
 
-That means that all of the flex container's **immediate** children can have flex properties applied to them.
+That means that all of the flex container's **immediate** children can have flex
+properties applied to them.
 
 The flexbox approach differs from the methods described in the CodePen above in
 that the arrangement of elements is managed by the **parent** container. The
@@ -196,8 +207,7 @@ arranged relative to the cross-axis: `flex-start`, `flex-end`, `stretch`
 > That's a lot of CSS properties! Don't worry, you're not expected to memorize
 > all of them. Being a developer is less about knowing everything off the top of
 > your head and more about knowing best practices and where to find more info
-> [Here's a great
-> resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+> [Here's a great resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 ### You Do: Explore Flexbox Properties
 
@@ -297,17 +307,19 @@ main {
 }
 ```
 
-Now we have two **flex containers**: `main` and `body`. By setting `display: flex` on main we can tell the three `section` elements to be controlled as flex items.
-
+Now we have two **flex containers**: `main` and `body`. By setting `display:
+flex` on main we can tell the three `section` elements to be controlled as flex
+items.
 
 [Solution on CodePen](http://codepen.io/awhitley1233/pen/PWzOPg)
 
+<!--
 ## You Do: More Flexbox Properties (25 minutes / 1:05)
 
 > 15 min research, 10 min presentations
 
 Time for you to research some more Flexbox properties. You will be split into
-groups and assigned one of the following flex properties...
+groups and assigned one of the following flex properties:
 
 - `flex-wrap`
 - `flex-grow`
@@ -330,6 +342,7 @@ Your task is to:
 If you finish early, try exploring some of the [other flexbox
 properties](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) not
 assigned in this exercise.
+
 
 ### Some Helpful Resources
 
@@ -393,6 +406,7 @@ assigned in this exercise.
 >[Example](http://gedd.ski/post/the-difference-between-width-and-flex-basis/)
 
 </details>
+-->
 
 ## Break (10 min / 1:15)
 
@@ -430,8 +444,7 @@ done!
 }
 ```
 
-> A layout so holy, [it has its own Wikipedia
-> article](https://en.wikipedia.org/wiki/Holy_Grail_(web_design)).
+> A layout so holy, [it has its own Wikipedia article](https://en.wikipedia.org/wiki/Holy_Grail_(web_design)).
 
 [Example](http://codepen.io/awhitley1233/pen/XpKzqV)
 
@@ -465,8 +478,7 @@ looking, versatile websites.
 
 ## You Do: Explore the source code (5 min / 1:35)
 
-Let's take a few minutes to [explore this web
-app](https://www.inprnt.com/discover/) built with Grid layout.
+Let's take a few minutes to [explore this web app](https://www.inprnt.com/discover/) built with Grid layout.
 
 > This site was built by a former GA student using CSS Grid, Flexbox, and React.
 
@@ -508,7 +520,7 @@ For now we will focus on `px` and `fr` units.  You can also use `repeat` to
 specify multiple rows or columns of one size like this `repeat(5, 1fr)`
 
 3. the *child* elements, you can specify *where* the *cells* are located and the
-   *size* you want them to be.  I like to follow this pattern...
+   *size* you want them to be.  I like to follow this pattern:
 
 ```css
 selector {
@@ -616,38 +628,44 @@ Check out the link and work through it for the next 20 minutes.
 
 ## Closing / Questions (Rest of Class / 2:30)
 
-You don't have to pick between flexbox and grid. You can use both on the same page, in different elements. 
+You don't have to pick between flexbox and grid. You can use both on the same
+page, in different elements. 
 
-You can even use one inside of the other! A common practice is to use Grid for the page layout, and flexbox for smaller page components.
+You can even use one inside of the other! A common practice is to use Grid for
+the page layout, and flexbox for smaller page components.
 
-- Why is alignment so important with modern web development?
-- What problems do flexbox and css grid solve?
-- Where do I put `display: flex` or `display: grid`?
-- With flexbox, what are some properties that `justify-content` can take?
-- Explain how to place an item into a grid container.
-
-## Resources
-
-- [flexbox.io](https://flexbox.io/)
-- [The Ultimate Flexbox
-  Cheatsheet](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
-- [CSS Tricks Guide to
-  Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [A Visual Guide to CSS3 Flexbox
-  Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
-- [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
-- [Flexplorer](http://bennettfeely.com/flexplorer/)
-- [Holy Grail Layout - Solved By
-  Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
-- [The CSS `grid`
-  Module](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [Wes Bos Teaches CSS-Grid](http://wesbos.com/announcing-my-css-grid-course/)
-- [Learn CSS Grid](http://learncssgrid.com/)
+* Why is alignment so important with modern web development?
+* What problems do flexbox and css grid solve?
+* Where do I put `display: flex` or `display: grid`?
+* With flexbox, what are some properties that `justify-content` can take?
+* Explain how to place an item into a grid container.
 
 ## Additional Practice
 
-- [Flexbox Froggy](http://flexboxfroggy.com/) (10 min / 3:55)
-- [CSS Grid Garden](http://cssgridgarden.com/)
-- [Hyrule Potion
-  Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop) (10
-  min / 4:10)
+* [Flexbox Froggy](http://flexboxfroggy.com/) (10 min / 3:55)
+* [CSS Grid Garden](http://cssgridgarden.com/)
+* [Hyrule Potion Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop) (10 min / 4:10)
+
+## Resources
+
+* [flexbox.io](https://flexbox.io/)
+* [The Ultimate Flexbox
+  Cheatsheet](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
+* [CSS Tricks Guide to
+  Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [A Visual Guide to CSS3 Flexbox
+  Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
+* [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
+* [Flexplorer](http://bennettfeely.com/flexplorer/)
+* [Holy Grail Layout - Solved By
+  Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
+* [The CSS `grid`
+  Module](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [Wes Bos Teaches CSS-Grid](http://wesbos.com/announcing-my-css-grid-course/)
+* [Learn CSS Grid](http://learncssgrid.com/)
+
+## [License](LICENSE)
+
+1. All content is licensed under a CC­BY­NC­SA 4.0 license.
+1. All software code is licensed under GNU GPLv3. For commercial use or
+    alternative licensing, please contact legal@ga.co.
