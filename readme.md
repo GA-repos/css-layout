@@ -12,11 +12,11 @@ easier!
 
 By the end of this, developers should be able to:
 
-* Explain what Flexbox is and what problem it solves
-* Use Flexbox to layout HTML elements
-* Explain what CSS Grid is and what problem it solves
-* Use CSS Grid to create a page layout.
-* Explain when to use Flexbox versus CSS Grid
+- Explain what Flexbox is and what problem it solves
+- Use Flexbox to layout HTML elements
+- Explain what CSS Grid is and what problem it solves
+- Use CSS Grid to create a page layout.
+- Explain when to use Flexbox versus CSS Grid
 
 ## Introduction
 
@@ -67,7 +67,7 @@ you change the screen size.
 ```html
 <html>
   <body>
-    <div> Div 1 </div>
+    <div>Div 1</div>
   </body>
 </html>
 ```
@@ -82,7 +82,7 @@ div {
   width: 100px;
   height: 100px;
   background: #990012;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 10px;
   font: 14pt Comic Sans MS;
   text-align: center;
@@ -95,16 +95,16 @@ div {
 <summary><strong>These might work:</strong></summary>
 
 > **Padding**: The simplest approach would be to set equal padding on the top
->and bottom of the container (body) element. We would need to know the exact
->height of the element and container in order to get this exactly right. This
->can also get tedious when there is more than one element in a container.
+> and bottom of the container (body) element. We would need to know the exact
+> height of the element and container in order to get this exactly right. This
+> can also get tedious when there is more than one element in a container.
 
->**Margin**: Similarly, we could add some margin to the element we are trying to
->center. The same issues remain.
+> **Margin**: Similarly, we could add some margin to the element we are trying
+> to center. The same issues remain.
 
->**Absolute Positioning**: You could use properties like `top` and `left` to
->position an element in the center. This, however, removes it from the document
->flow.
+> **Absolute Positioning**: You could use properties like `top` and `left` to
+> position an element in the center. This, however, removes it from the document
+> flow.
 
 </details>
 
@@ -113,18 +113,18 @@ div {
 <summary><strong>These could work in other scenarios:</strong></summary>
 
 > **`line-height`**: When vertically centering a single line of text, you can
->set the line-height to that of the whole container.
+> set the line-height to that of the whole container.
 
->**`vertical-align`**: Used to align words within a line of text (e.g.,
->superscript, subscript).
+> **`vertical-align`**: Used to align words within a line of text (e.g.,
+> superscript, subscript).
 
 </details>
 
 The tough part is that how to vertically center a element depends on its context
 meaning that an element has to look to its parent and then align itself;
 siblings start to make this very difficult (go figure!). Depending on your
-situation, one or more of the above techniques could work. [Here's an
-enlightening post on the matter](https://css-tricks.com/centering-in-the-unknown/).
+situation, one or more of the above techniques could work.
+[Here's an enlightening post on the matter](https://css-tricks.com/centering-in-the-unknown/).
 
 #### Flexbox to the Rescue
 
@@ -170,7 +170,7 @@ container to "read" left-to-right (`row`), right-to-left (`row-reverse`),
 top-to-bottom (`column`), or bottom-to-top (`column-reverse`).
 
 | flex-direction | main-axis Direction |
-|----------------|---------------------|
+| -------------- | ------------------- |
 | row (default)  | left-to-right       |
 | column         | top-to-bottom       |
 | row-reverse    | right-to-left       |
@@ -197,12 +197,12 @@ arranged relative to the cross-axis: `flex-start`, `flex-end`, `stretch`
 
 ### In Summary
 
-| Property | What's It Do? | Examples |
-|----------|---------------|----------|
-| **display**  |               | `flex`   |
-| **[flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)** | Sets the directional flow of flex items | `row`, `column` |
-| **[justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)** | Align along main axis | `center`, `space-between` |
-| **[align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)** | Align along cross-axis | `flex-start`, `center` |
+| Property                                                                                | What's It Do?                           | Examples                  |
+| --------------------------------------------------------------------------------------- | --------------------------------------- | ------------------------- |
+| **display**                                                                             |                                         | `flex`                    |
+| **[flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)**   | Sets the directional flow of flex items | `row`, `column`           |
+| **[justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)** | Align along main axis                   | `center`, `space-between` |
+| **[align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)**         | Align along cross-axis                  | `flex-start`, `center`    |
 
 > That's a lot of CSS properties! Don't worry, you're not expected to memorize
 > all of them. Being a developer is less about knowing everything off the top of
@@ -228,13 +228,13 @@ that, I want to evenly distribute the content boxes horizontally inside of the
 
 ```html
 <html>
-  <header> FlexBox </header>
+  <header>FlexBox</header>
   <main>
     <section>Content 1</section>
     <section>Content 2</section>
     <section>Content 3</section>
   </main>
-  <footer> CodePen by Andrew Whitley </footer>
+  <footer>CodePen by General Assembly</footer>
 </html>
 ```
 
@@ -245,23 +245,24 @@ body {
   font: 12pt Comic Sans MS;
 }
 
-header, footer {
+header,
+footer {
   width: 100%;
   height: 30px;
   background: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   line-height: 30px;
 }
 
 main {
-  background: #D3D3D3;
+  background: #d3d3d3;
 }
 
 section {
   width: 100px;
   background: #990012;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 10px;
   margin: 5px;
   text-align: center;
@@ -301,15 +302,15 @@ content inside of the `<main>`. What element should we style?
 
 ```css
 main {
-  background: #D3D3D3;
+  background: #d3d3d3;
   display: flex;
   justify-content: space-around;
 }
 ```
 
-Now we have two **flex containers**: `main` and `body`. By setting `display:
-flex` on main we can tell the three `section` elements to be controlled as flex
-items.
+Now we have two **flex containers**: `main` and `body`. By setting
+`display: flex` on main we can tell the three `section` elements to be
+controlled as flex items.
 
 [Solution on CodePen](http://codepen.io/awhitley1233/pen/PWzOPg)
 
@@ -433,7 +434,7 @@ any size / order adjustments on the sections of the page, and you're pretty much
 done!
 
 ```css
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   main {
     flex-direction: column;
   }
@@ -444,7 +445,8 @@ done!
 }
 ```
 
-> A layout so holy, [it has its own Wikipedia article](https://en.wikipedia.org/wiki/Holy_Grail_(web_design)).
+> A layout so holy,
+> [it has its own Wikipedia article](<https://en.wikipedia.org/wiki/Holy_Grail_(web_design)>).
 
 [Example](http://codepen.io/awhitley1233/pen/XpKzqV)
 
@@ -465,11 +467,11 @@ sizes of your choosing, and then specify how many rows and columns each `cell`
 takes up. Sizing can be fixed, or dynamic, allowing you to create modern
 looking, versatile websites.
 
-*Example of **flexbox** layout*
+_Example of **flexbox** layout_
 
 ![flex layout example](assets/flex-layout-ex.png)
 
-*example of **grid** layout*
+_example of **grid** layout_
 
 ![grid layout example](assets/grid-layout-ex.png)
 
@@ -478,7 +480,8 @@ looking, versatile websites.
 
 ## You Do: Explore the source code (5 min / 1:35)
 
-Let's take a few minutes to [explore this web app](https://www.inprnt.com/discover/) built with Grid layout.
+Let's take a few minutes to
+[explore this web app](https://www.inprnt.com/discover/) built with Grid layout.
 
 > This site was built by a former GA student using CSS Grid, Flexbox, and React.
 
@@ -487,8 +490,8 @@ like to do it.
 
 Feel free to code along in codepen.
 
-1. To start, you must have a *container* (or *parent*) element, with at least
-   one *nested* (or *child*) elements inside.
+1. To start, you must have a _container_ (or _parent_) element, with at least
+   one _nested_ (or _child_) elements inside.
 
 ```html
 <div class="parent">
@@ -499,8 +502,8 @@ Feel free to code along in codepen.
 ```
 
 2. On the container, specify that you are using `display: grid` and what your
-   ***template*** will look like - more specifically, your ***rows*** and
-   ***columns***. Here's an example.
+   **_template_** will look like - more specifically, your **_rows_** and
+   **_columns_**. Here's an example.
 
 ```css
 .parent {
@@ -513,14 +516,14 @@ Feel free to code along in codepen.
 `fr` represents `fraction`, it's a unit that will evenly span the remainder of
 the space.
 
-Here we have specified ***3 rows***, taking up 100, 200, and 300 pixels
-respectively. We also specified ***4 columns***, giving us a total of ***12
-cells***. `grid-template` also takes other units like `%`, `rem`, and `auto`.
-For now we will focus on `px` and `fr` units.  You can also use `repeat` to
+Here we have specified **_3 rows_**, taking up 100, 200, and 300 pixels
+respectively. We also specified **_4 columns_**, giving us a total of **_12
+cells_**. `grid-template` also takes other units like `%`, `rem`, and `auto`.
+For now we will focus on `px` and `fr` units. You can also use `repeat` to
 specify multiple rows or columns of one size like this `repeat(5, 1fr)`
 
-3. the *child* elements, you can specify *where* the *cells* are located and the
-   *size* you want them to be.  I like to follow this pattern:
+3. the _child_ elements, you can specify _where_ the _cells_ are located and the
+   _size_ you want them to be. I like to follow this pattern:
 
 ```css
 selector {
@@ -528,9 +531,9 @@ selector {
 }
 ```
 
->same would work for `grid-column`
+> same would work for `grid-column`
 
-So something like this on a *child* element:
+So something like this on a _child_ element:
 
 ```css
 .child-one {
@@ -546,12 +549,13 @@ We could also write `grid-row: 1;` for short, if your element only spans 1 row.
 
 ### You do: Griddle me this (10 min / 1:45)
 
-Now let's follow along and try to make our *holy grail* website design using
+Now let's follow along and try to make our _holy grail_ website design using
 Grid layout. We will need a header, a footer, two side columns, and a main
 section. The starter code has been set up for you
 [here](https://codepen.io/perryf/pen/rJNZpw)
 
-Using the grid concepts we just learned, see if you can spend a few minutes getting the holy grail layout built.
+Using the grid concepts we just learned, see if you can spend a few minutes
+getting the holy grail layout built.
 
 > Try it! Don't read ahead! We'll go over it next.
 
@@ -567,8 +571,8 @@ body {
 }
 ```
 
-Now let's figure out how to format our `header`.  We want the header to take up
-1 row and 3 columns.  Let's give it some color too.
+Now let's figure out how to format our `header`. We want the header to take up 1
+row and 3 columns. Let's give it some color too.
 
 ```css
 header {
@@ -578,7 +582,7 @@ header {
 }
 ```
 
-Now onto our left column.  That will only take up 1 column and one row, starting
+Now onto our left column. That will only take up 1 column and one row, starting
 at row 2.
 
 ```css
@@ -629,43 +633,39 @@ Check out the link and work through it for the next 20 minutes.
 ## Closing / Questions (Rest of Class / 2:30)
 
 You don't have to pick between flexbox and grid. You can use both on the same
-page, in different elements. 
+page, in different elements.
 
 You can even use one inside of the other! A common practice is to use Grid for
 the page layout, and flexbox for smaller page components.
 
-* Why is alignment so important with modern web development?
-* What problems do flexbox and css grid solve?
-* Where do I put `display: flex` or `display: grid`?
-* With flexbox, what are some properties that `justify-content` can take?
-* Explain how to place an item into a grid container.
+- Why is alignment so important with modern web development?
+- What problems do flexbox and css grid solve?
+- Where do I put `display: flex` or `display: grid`?
+- With flexbox, what are some properties that `justify-content` can take?
+- Explain how to place an item into a grid container.
 
 ## Additional Practice
 
-* [Flexbox Froggy](http://flexboxfroggy.com/) (10 min / 3:55)
-* [CSS Grid Garden](http://cssgridgarden.com/)
-* [Hyrule Potion Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop) (10 min / 4:10)
+- [Flexbox Froggy](http://flexboxfroggy.com/) (10 min / 3:55)
+- [CSS Grid Garden](http://cssgridgarden.com/)
+- [Hyrule Potion Shop](https://git.generalassemb.ly/ga-wdi-exercises/hyrule_potion_shop)
+  (10 min / 4:10)
 
 ## Resources
 
-* [flexbox.io](https://flexbox.io/)
-* [The Ultimate Flexbox
-  Cheatsheet](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
-* [CSS Tricks Guide to
-  Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-* [A Visual Guide to CSS3 Flexbox
-  Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
-* [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
-* [Flexplorer](http://bennettfeely.com/flexplorer/)
-* [Holy Grail Layout - Solved By
-  Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
-* [The CSS `grid`
-  Module](https://css-tricks.com/snippets/css/complete-guide-grid/)
-* [Wes Bos Teaches CSS-Grid](http://wesbos.com/announcing-my-css-grid-course/)
-* [Learn CSS Grid](http://learncssgrid.com/)
+- [flexbox.io](https://flexbox.io/)
+- [The Ultimate Flexbox Cheatsheet](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
+- [CSS Tricks Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [A Visual Guide to CSS3 Flexbox Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
+- [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
+- [Flexplorer](http://bennettfeely.com/flexplorer/)
+- [Holy Grail Layout - Solved By Flexbox](https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/)
+- [The CSS `grid` Module](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [Wes Bos Teaches CSS-Grid](http://wesbos.com/announcing-my-css-grid-course/)
+- [Learn CSS Grid](http://learncssgrid.com/)
 
 ## [License](LICENSE)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
 1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+   alternative licensing, please contact legal@ga.co.
