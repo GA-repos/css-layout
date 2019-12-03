@@ -3,10 +3,7 @@
 # Flexbox & Grid
 
 Now that we have the basics of HTML and CSS down, it's time to start exploring
-some of the more advanced aspects of CSS. For a long time, using CSS to layout
-HTML elements was a really challenging task, involving a lot of `float`s with
-margins and padding. We're going to use Flexbox and CSS Grid, which make this
-easier!
+some of the more advanced aspects of CSS. Today we're going to learn about Flexbox and CSS Grid &mdash; two modern tools in our CSS toolkit for positioning elements with our pages.
 
 ## Objectives
 
@@ -22,47 +19,32 @@ By the end of this, developers should be able to:
 
 HTML was created as a document-oriented markup language. CSS emerged as a way to
 style the elements of documents without interfering with the semantic meaning of
-them. In many ways it achieves this goal well; yet it remains one of the most
-frustrating parts of web development:
-
-![Obligatory Peter Griffin CSS GIF](https://2.bp.blogspot.com/-41v6n3Vaf5s/UeRN_XJ0keI/AAAAAAAAN2Y/YxIHhddGiaw/s1600/css.gif)
-
-Aligning items with CSS has traditionally been one of the key contributors to
-this aggravation. For a long time, there wasn't a good way to layout elements
-using CSS despite alignment being an increasingly important part of web design.
+them. In many ways it achieves this goal well; yet it takes an understanding of the fundamental way in which HTML elements are rendered by our browsers to master it.
 
 Today we'll be learning about two modern tools for aligning content on the web.
 
-**Flexbox**, a layout mode introduced with CSS3, is great for layout out
-elements in common UI elements. It is at this point widely implemented across
-different browsers.
+**Flexible box model AKA Flexbox:** a layout mode introduced with CSS3 that is great for laying out elements in one direction.
 
-**CSS Grid**, an even newer layout mode, is well suited for laying out the key
-components of a webpage. It is not as widely implemented as Flexbox, but it does
-work on most modern browsers.
+**CSS Grid:** a layout mode that was adopted shortly after flexbox that allows us to layout elements in two directions.
 
-> We can check https://caniuse.com/ to see what browsers support what we want to
-> implement.
+> Both of these are considered part of the modern CSS specification and have great support in browsers today.  We can always check https://caniuse.com/ to see what browsers support what we want to implement.
 
 ## Problem 1: Vertical Alignment (15 min / 0:20)
 
-Let's start out by talking about a problem that anybody who has written CSS has
-likely dealt with:
+Let's start by talking about a problem anyone who writes CSS inevitably faces:
 
 **I have a `div`. I would like to center it vertically and horizontally on my
-page.** The end result should look something like this:
+page.** 
 
-![centered div](assets/centered_div.png)
+Example on [Codepen](https://codepen.io/jme11/live/QWwwGgB)
 
-Example on [Codepen](http://codepen.io/awhitley1233/pen/ygJzJW)
+This example takes advantage of flexbox and two of its modifier properties: `justify-content` and `align-items`.
 
-### You Do: Center a `div`
+### We Do: Center a `div`
 
-Take about **10 minutes** to try to get the div in this example centered like
-the image above. Make sure it's still centered vertically and horizontally when
-you change the screen size.
+Let's get this div centered horizontally and vertically on the page together.
 
-#### You Tell Me: What Should I Try
+Example on [Codepen](https://codepen.io/jme11/pen/PowwbGj)
 
 ```html
 <html>
@@ -74,74 +56,25 @@ you change the screen size.
 
 ```css
 body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
   min-height: 100vh;
-  margin: 0 auto;
 }
 
 div {
-  width: 100px;
+  background: #e51b24;
+  border-radius: 3px;
+  color: #fff;
   height: 100px;
-  background: #990012;
-  color: #ffffff;
-  border-radius: 10px;
-  font: 14pt Comic Sans MS;
-  text-align: center;
-  line-height: 100px;
+  padding: 1rem;
+  width: 100px;
 }
 ```
 
-<details>
+#### You Do: Center Text Horizontally & Vertically
 
-<summary><strong>These might work:</strong></summary>
-
-> **Padding**: The simplest approach would be to set equal padding on the top
-> and bottom of the container (body) element. We would need to know the exact
-> height of the element and container in order to get this exactly right. This
-> can also get tedious when there is more than one element in a container.
-
-> **Margin**: Similarly, we could add some margin to the element we are trying
-> to center. The same issues remain.
-
-> **Absolute Positioning**: You could use properties like `top` and `left` to
-> position an element in the center. This, however, removes it from the document
-> flow.
-
-</details>
-
-<details>
-
-<summary><strong>These could work in other scenarios:</strong></summary>
-
-> **`line-height`**: When vertically centering a single line of text, you can
-> set the line-height to that of the whole container.
-
-> **`vertical-align`**: Used to align words within a line of text (e.g.,
-> superscript, subscript).
-
-</details>
-
-The tough part is that how to vertically center a element depends on its context
-meaning that an element has to look to its parent and then align itself;
-siblings start to make this very difficult (go figure!). Depending on your
-situation, one or more of the above techniques could work.
-[Here's an enlightening post on the matter](https://css-tricks.com/centering-in-the-unknown/).
-
-#### Flexbox to the Rescue
-
-Laying out elements used to be difficult and fraught with error. Now, we can
-just use Flexbox:
-
-```css
-body {
-  min-height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-```
-
-View solution [here](http://codepen.io/awhitley1233/pen/EZyvMY)
+Now it's your turn, see if you can center the text inside the `<div>` both horizontally & vertically.
 
 ## How It Works (10 min / 0:30)
 
@@ -153,15 +86,14 @@ that rule becomes a **flex container**.
 That means that all of the flex container's **immediate** children can have flex
 properties applied to them.
 
-The flexbox approach differs from the methods described in the CodePen above in
-that the arrangement of elements is managed by the **parent** container. The
+With flexbox the arrangement of elements is managed by the **parent** container. The
 child of a **flex container** is called a **flex item**. We can change the way
 flex items display by setting item-specific properties that will come later in
 the lesson.
 
 After the `display` property, the most important flexbox property to understand
-is `flex-direction`. It is very important to remember that the `flex-direction`
-orients **flex container's main-axis**. The main axis can be set to run
+is `flex-direction`. The `flex-direction` 
+orients the elements inside the container and sets the **flex container's main-axis**. The main axis can be set to run
 vertically or horizontally depending on the value of `flex-direction`. All other
 flex-related properties are defined in terms of the main axis.
 
@@ -220,21 +152,33 @@ I want my footer to lie along the bottom of my page. Once I've accomplished
 that, I want to evenly distribute the content boxes horizontally inside of the
 `<main>` element.
 
-![flexbox layout](assets/flex-box-example2.png)
+[Example on CodePen](https://codepen.io/jme11/live/MWYgEXw)
 
-[Example on CodePen](http://codepen.io/awhitley1233/pen/ygJzqy)
+### We Do: Make A Flex Item Grow to Take Up the Remaining Space
 
-### You Tell Me: What Should I Try (Again)
+
 
 ```html
 <html>
-  <header>FlexBox</header>
+<body>
+  <header>
+    <h1>Flexbox: flex-grow</h1>
+  </header>
   <main>
-    <section>Content 1</section>
-    <section>Content 2</section>
-    <section>Content 3</section>
+    <section>
+      <h2>Content 1</h2>
+    </section>
+    <section>
+      <h2>Content 2</h2>
+    </section>
+    <section>
+      <h2>Content 3</h2>
+    </section>
   </main>
-  <footer>CodePen by General Assembly</footer>
+  <footer>
+    <p>&copy; 2019 General Assembly</p>
+  </footer>
+</body>
 </html>
 ```
 
@@ -242,54 +186,31 @@ that, I want to evenly distribute the content boxes horizontally inside of the
 body {
   min-height: 100vh;
   margin: 0 auto;
-  font: 12pt Comic Sans MS;
+  font-family: sans-serif;
 }
 
-header,
-footer {
-  width: 100%;
-  height: 30px;
-  background: #000000;
-  color: #ffffff;
+header, footer {
+  background: #000;
+  color: #fff;
   text-align: center;
-  line-height: 30px;
+  padding: 1rem;
 }
 
 main {
-  background: #d3d3d3;
+  padding: .5rem;
 }
 
 section {
-  width: 100px;
-  background: #990012;
-  color: #ffffff;
-  border-radius: 10px;
-  margin: 5px;
-  text-align: center;
-  line-height: 100px;
+  background: #e51b24;
+  border-radius: 3px;
+  color: #fff;
+  margin: .5rem;
+  padding: 1rem;
+  width: 100%;
 }
 ```
 
-Making the footer lie against the bottom of the screen is pretty easy: just use
-absolute or fixed positioning. However, using absolute or fixed positioning
-means everything else on the page ignores my footer. The text of `<main>` could
-easily run under the footer. We want the text to "push" the footer to the end of
-the page.
-
-### Flexbox to the Rescue Again
-
-```css
-body {
-  min-height: 100vh;
-  margin: 0 auto;
-  font: 12pt Comic Sans MS;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-```
-
-<details>
+Making the footer lie against the bottom of the screen is pretty easy when we apply `flex-grow: 1` to the `<main>` html element.
 
 <summary><strong>How is main axis of the `body` oriented here? What about the cross-axis?</strong></summary>
 
@@ -300,19 +221,11 @@ body {
 Now let's horizontally distribute the `<section>` elements containing the page's
 content inside of the `<main>`. What element should we style?
 
-```css
-main {
-  background: #d3d3d3;
-  display: flex;
-  justify-content: space-around;
-}
-```
-
 Now we have two **flex containers**: `main` and `body`. By setting
 `display: flex` on main we can tell the three `section` elements to be
 controlled as flex items.
 
-[Solution on CodePen](http://codepen.io/awhitley1233/pen/PWzOPg)
+[Solution on CodePen](http://codepen.io/jme11/pen/MWYgEXw)
 
 <!--
 ## You Do: More Flexbox Properties (25 minutes / 1:05)
