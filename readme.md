@@ -44,7 +44,7 @@ work on most modern browsers.
 > We can check https://caniuse.com/ to see what browsers support what we want to
 > implement.
 
-## Problem 1: Vertical Alignment (15 min / 0:20)
+## Problem 1: Vertical Alignment
 
 Let's start out by talking about a problem that anybody who has written CSS has
 likely dealt with:
@@ -61,8 +61,6 @@ Example on [Codepen](http://codepen.io/awhitley1233/pen/ygJzJW)
 Take about **10 minutes** to try to get the div in this example centered like
 the image above. Make sure it's still centered vertically and horizontally when
 you change the screen size.
-
-#### You Tell Me: What Should I Try
 
 ```html
 <html>
@@ -143,7 +141,7 @@ body {
 
 View solution [here](http://codepen.io/awhitley1233/pen/EZyvMY)
 
-## How It Works (10 min / 0:30)
+## How It Works 
 
 ![flexbox diagram](assets/flexbox-diagram.jpg)
 
@@ -214,7 +212,7 @@ arranged relative to the cross-axis: `flex-start`, `flex-end`, `stretch`
 [Open this Codepen](https://codepen.io/ZakkMann/pen/OZBpob) to explore the
 different Flexbox properties and see how they work.
 
-## Problem 2: Make the Footer Stick (10 min / 0:40)
+## Problem 2: Make the Footer Stick
 
 I want my footer to lie along the bottom of my page. Once I've accomplished
 that, I want to evenly distribute the content boxes horizontally inside of the
@@ -223,8 +221,6 @@ that, I want to evenly distribute the content boxes horizontally inside of the
 ![flexbox layout](assets/flex-box-example2.png)
 
 [Example on CodePen](http://codepen.io/awhitley1233/pen/ygJzqy)
-
-### You Tell Me: What Should I Try (Again)
 
 ```html
 <html>
@@ -409,9 +405,7 @@ assigned in this exercise.
 </details>
 -->
 
-## Break (10 min / 1:15)
-
-## The Holy Grail Layout (5 min / 1:20)
+## The Holy Grail Layout
 
 ![holy grail layout](assets/holy-grail-layout.png)
 
@@ -452,7 +446,7 @@ done!
 
 ## CSS Grid
 
-### What is CSS-Grid Layout? (10 min / 1:30)
+### What is CSS-Grid Layout? 
 
 From the [www.w3.org](https://www.w3.org/TR/css-grid-1/) website:
 
@@ -478,7 +472,7 @@ _example of **grid** layout_
 > Notice that the grid items are aligned (rather than filling up the available
 > space) and that cells can take up multiple rows or columns
 
-## You Do: Explore the source code (5 min / 1:35)
+## You Do: Explore the source code
 
 Let's take a few minutes to
 [explore this web app](https://www.inprnt.com/discover/) built with Grid layout.
@@ -547,7 +541,7 @@ at column 1.
 
 We could also write `grid-row: 1;` for short, if your element only spans 1 row.
 
-### You do: Griddle me this (10 min / 1:45)
+### You do: Griddle me this
 
 Now let's follow along and try to make our _holy grail_ website design using
 Grid layout. We will need a header, a footer, two side columns, and a main
@@ -559,7 +553,7 @@ getting the holy grail layout built.
 
 > Try it! Don't read ahead! We'll go over it next.
 
-### We do: Griddle me this (10 min / 1:55)
+### We do: Griddle me this 
 
 Now let's add our `grid-template` code to our parent element.
 
@@ -626,11 +620,11 @@ footer {
 
 Solution on [codepen](https://codepen.io/perryf/pen/eVYbGv)
 
-## You Do: [CSS Grid Art](https://git.generalassemb.ly/dc-wdi-fundamentals/css-grid-art) (20 min / 2:15)
+## You Do: [CSS Grid Art](../../../css-grid-art) 
 
 Check out the link and work through it for the next 20 minutes.
 
-## Closing / Questions (Rest of Class / 2:30)
+## Closing / Questions
 
 You don't have to pick between flexbox and grid. You can use both on the same
 page, in different elements.
