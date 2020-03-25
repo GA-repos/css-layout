@@ -186,7 +186,7 @@ arranged relative to the cross-axis: `flex-start`, `flex-end`, `stretch`
 > your head and more about knowing best practices and where to find more info
 > [Here's a great resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-### You Do: Explore Flexbox Properties
+### We Do: Explore Flexbox Properties
 
 [Open this Codepen](https://codepen.io/ZakkMann/pen/OZBpob) to explore the
 different Flexbox properties and see how they work.
@@ -197,51 +197,31 @@ I want my footer to lie along the bottom of my page. Once I've accomplished
 that, I want to evenly distribute the content boxes horizontally inside of the
 `<main>` element.
 
-![flexbox layout](assets/flex-box-example2.png)
-
-[Example on CodePen](http://codepen.io/awhitley1233/pen/ygJzqy)
+Create another file inside the directory called `stuck-footer.html` and add your html boilerplate to it. Add the html below to the body.
 
 ```html
-<html>
-  <header>FlexBox</header>
-  <main>
-    <section>Content 1</section>
-    <section>Content 2</section>
-    <section>Content 3</section>
-  </main>
-  <footer>CodePen by General Assembly</footer>
-</html>
+<header>header</header>
+<main>main</main>
+<footer>&copy; 2020 General Assembly</footer>
 ```
+
+Create a css file called `styles/footer.css` and link it to your `stuck-footer.html` file.  Run the `stuck-footer.html` file with the Live Server.
+
 
 ```css
 body {
   min-height: 100vh;
-  margin: 0 auto;
-  font: 12pt Comic Sans MS;
 }
 
 header,
-footer {
-  width: 100%;
-  height: 30px;
-  background: #000000;
-  color: #ffffff;
-  text-align: center;
-  line-height: 30px;
-}
-
+footer, 
 main {
-  background: #d3d3d3;
+  padding: 2rem;
 }
 
-section {
-  width: 100px;
-  background: #990012;
-  color: #ffffff;
-  border-radius: 10px;
-  margin: 5px;
-  text-align: center;
-  line-height: 100px;
+footer {
+  background: #000;
+  color: #fff;
 }
 ```
 
@@ -256,8 +236,7 @@ the page.
 ```css
 body {
   min-height: 100vh;
-  margin: 0 auto;
-  font: 12pt Comic Sans MS;
+  /* Add these: */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -272,27 +251,8 @@ body {
 
 </details>
 
-Now let's horizontally distribute the `<section>` elements containing the page's
-content inside of the `<main>`. What element should we style?
-
-```css
-main {
-  background: #d3d3d3;
-  display: flex;
-  justify-content: space-around;
-}
-```
-
-Now we have two **flex containers**: `main` and `body`. By setting
-`display: flex` on main we can tell the three `section` elements to be
-controlled as flex items.
-
-[Solution on CodePen](http://codepen.io/awhitley1233/pen/PWzOPg)
-
 <!--
-## You Do: More Flexbox Properties (25 minutes / 1:05)
-
-> 15 min research, 10 min presentations
+## You Do: More Flexbox Properties
 
 Time for you to research some more Flexbox properties. You will be split into
 groups and assigned one of the following flex properties:
@@ -397,7 +357,7 @@ Obviously, this layout won't work on tiny screens, unless you really like
 super-skinny columns. It's common to stack things on top of each other for
 mobile views to make one single column.
 
-Before flexbox, this involved a lot of pushing and shoving with dimensions and
+Before flexbox or CSS grid, this involved a lot of pushing and shoving with dimensions and
 positioning. You would essentially have to write two completely separate
 stylesheets (one for mobile, and one for desktop), each to control the different
 layours.
@@ -421,7 +381,7 @@ done!
 > A layout so holy,
 > [it has its own Wikipedia article](<https://en.wikipedia.org/wiki/Holy_Grail_(web_design)>).
 
-[Example](http://codepen.io/awhitley1233/pen/XpKzqV)
+[Example](https://codepen.io/jme11/pen/WNvYQzW)
 
 ## CSS Grid
 
@@ -597,7 +557,7 @@ footer {
 }
 ```
 
-Solution on [codepen](https://codepen.io/perryf/pen/eVYbGv)
+Solution on [codepen](https://codepen.io/jme11/pen/OJVaywa)
 
 ## You Do: [CSS Grid Art](../../../css-grid-art) 
 
