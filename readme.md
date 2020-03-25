@@ -563,6 +563,12 @@ Solution on [codepen](https://codepen.io/jme11/pen/OJVaywa)
 
 Check out the link and work through it for the next 20 minutes.
 
+## Autofit Content in a Grid
+
+One additional problem that CSS Grid solves for us is the ability to autofit content into a grid without using media queries.  This is something that you'll like do a lot of in this program.  Let's take a look at an example together:
+
+[Example](https://codepen.io/jme11/pen/jOEdPJb?editors=1100)
+
 ## Closing / Questions
 
 You don't have to pick between flexbox and grid. You can use both on the same
