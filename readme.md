@@ -2,11 +2,9 @@
 
 # Flexbox & Grid
 
-Now that we have the basics of HTML and CSS down, it's time to start exploring
-some of the more advanced aspects of CSS. For a long time, using CSS to layout
-HTML elements was a really challenging task, involving a lot of `float`s with
-margins and padding. We're going to use Flexbox and CSS Grid, which make this
-easier!
+Now that we've reviewed the basics of HTML and CSS, it's time to start exploring
+some of the more advanced aspects of CSS. We're going to use Flexbox and CSS Grid, 
+during this lesson to help us control the overall layout of our pages.
 
 ## Objectives
 
@@ -15,23 +13,14 @@ By the end of this, developers should be able to:
 - Explain what Flexbox is and what problem it solves
 - Use Flexbox to layout HTML elements
 - Explain what CSS Grid is and what problem it solves
-- Use CSS Grid to create a page layout.
+- Use CSS Grid to create a page layout
 - Explain when to use Flexbox versus CSS Grid
 
 ## Introduction
 
 HTML was created as a document-oriented markup language. CSS emerged as a way to
 style the elements of documents without interfering with the semantic meaning of
-them. In many ways it achieves this goal well; yet it remains one of the most
-frustrating parts of web development:
-
-![Obligatory Peter Griffin CSS GIF](https://2.bp.blogspot.com/-41v6n3Vaf5s/UeRN_XJ0keI/AAAAAAAAN2Y/YxIHhddGiaw/s1600/css.gif)
-
-Aligning items with CSS has traditionally been one of the key contributors to
-this aggravation. For a long time, there wasn't a good way to layout elements
-using CSS despite alignment being an increasingly important part of web design.
-
-Today we'll be learning about two modern tools for aligning content on the web.
+them. Today we'll be learning about two modern tools for aligning content on the web.
 
 **Flexbox**, a layout mode introduced with CSS3, is great for layout out
 elements in common UI elements. It is at this point widely implemented across
@@ -41,8 +30,49 @@ different browsers.
 components of a webpage. It is not as widely implemented as Flexbox, but it does
 work on most modern browsers.
 
-> We can check https://caniuse.com/ to see what browsers support what we want to
-> implement.
+> Use https://caniuse.com/ to determine which browsers support the features we use in our CSS.
+
+## Scaffold an HTML Page
+
+Using the techniques you learned to scaffold the boilerplate for a blank HTML page in VS Code.
+
+Start by creating a new directory for this lesson:
+
+```bash
+cd ~/sei/sandbox
+mkdir css-layout
+cd css-layout
+touch index.html vertical-align.html
+mkdir styles
+touch ./styles/vertical.css
+```
+Inside of the index.html, create an unordered list inside the first list item add an anchor tag 
+that links to the `vertical-align.html` page that we created in the same directory. Set the link
+display text to read: `Vertical Alignment`. 
+
+Open `vertical-align.html` and add the html boilerplate to it.   Then add a single div to the body tag
+and place some text inside of it that reads: `Hello World`.
+
+Link the stylesheet for `vertical.css` to the `vertical-align.html` file and add the following CSS:
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ccc;
+  color: #fff;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+div {
+  background-color: #ff1493;
+  font-size: 2rem;
+}
+
+```
 
 ## Problem 1: Vertical Alignment
 
@@ -50,73 +80,21 @@ Let's start out by talking about a problem that anybody who has written CSS has
 likely dealt with:
 
 **I have a `div`. I would like to center it vertically and horizontally on my
-page.** The end result should look something like this:
-
-![centered div](assets/centered_div.png)
-
-Example on [Codepen](http://codepen.io/awhitley1233/pen/ygJzJW)
+page.** 
 
 ### You Do: Center a `div`
 
-Take about **10 minutes** to try to get the div in this example centered like
+Take about **5 minutes** to try to get the div in this example centered like
 the image above. Make sure it's still centered vertically and horizontally when
 you change the screen size.
 
 ```html
-<html>
+...
   <body>
-    <div>Div 1</div>
+    <div>Hello World</div>
   </body>
-</html>
+...
 ```
-
-```css
-body {
-  min-height: 100vh;
-  margin: 0 auto;
-}
-
-div {
-  width: 100px;
-  height: 100px;
-  background: #990012;
-  color: #ffffff;
-  border-radius: 10px;
-  font: 14pt Comic Sans MS;
-  text-align: center;
-  line-height: 100px;
-}
-```
-
-<details>
-
-<summary><strong>These might work:</strong></summary>
-
-> **Padding**: The simplest approach would be to set equal padding on the top
-> and bottom of the container (body) element. We would need to know the exact
-> height of the element and container in order to get this exactly right. This
-> can also get tedious when there is more than one element in a container.
-
-> **Margin**: Similarly, we could add some margin to the element we are trying
-> to center. The same issues remain.
-
-> **Absolute Positioning**: You could use properties like `top` and `left` to
-> position an element in the center. This, however, removes it from the document
-> flow.
-
-</details>
-
-<details>
-
-<summary><strong>These could work in other scenarios:</strong></summary>
-
-> **`line-height`**: When vertically centering a single line of text, you can
-> set the line-height to that of the whole container.
-
-> **`vertical-align`**: Used to align words within a line of text (e.g.,
-> superscript, subscript).
-
-</details>
 
 The tough part is that how to vertically center a element depends on its context
 meaning that an element has to look to its parent and then align itself;
@@ -131,15 +109,16 @@ just use Flexbox:
 
 ```css
 body {
-  min-height: 100vh;
+  background-color: #ccc;
+  color: #fff;
+  font-family: sans-serif;
   margin: 0 auto;
+  /* Add these: */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 ```
-
-View solution [here](http://codepen.io/awhitley1233/pen/EZyvMY)
 
 ## How It Works 
 
