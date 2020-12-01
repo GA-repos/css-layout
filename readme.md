@@ -1,7 +1,8 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
+# 12/2/2020
+# Instructor - Jeremy Taubman
 
-# 12/02/2020
 
 # Flexbox & Grid
 
@@ -35,6 +36,48 @@ work on most modern browsers.
 
 > Use https://caniuse.com/ to determine which browsers support the features we use in our CSS.
 
+## The Holy Grail Layout
+
+![holy grail layout](assets/holy-grail-layout.png)
+
+This is something you know well, even if you don't recognize the term. It
+describes a webpage with a header, footer, and three columns: a wide "main"
+column, a navigation column on the left, and an advertisement, site map, or
+extra info column along the right.
+
+Obviously, this layout won't work on tiny screens, unless you really like
+super-skinny columns. It's common to stack things on top of each other for
+mobile views to make one single column.
+
+Before flexbox or CSS grid, this involved a lot of pushing and shoving with dimensions and
+positioning. You would essentially have to write two completely separate
+stylesheets (one for mobile, and one for desktop), each to control the different
+layours.
+
+With flexbox, just change the `flex-direction` for smaller screen sizes, make
+any size / order adjustments on the sections of the page, and you're pretty much
+done!
+
+```css
+@media screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+
+  section {
+    order: 1;
+  }
+}
+```
+
+> A layout so holy,
+> [it has its own Wikipedia article](<https://en.wikipedia.org/wiki/Holy_Grail_(web_design)>).
+
+[Example](https://codepen.io/jme11/pen/WNvYQzW)
+
+
+
+
 ## Scaffold an HTML Page
 
 Using the techniques you learned to scaffold the boilerplate for a blank HTML page in VS Code.
@@ -45,18 +88,15 @@ Start by creating a new directory for this lesson:
 cd ~/sei/sandbox
 mkdir css-layout
 cd css-layout
-touch index.html vertical-align.html
+touch index.html
 mkdir styles
-touch ./styles/vertical.css
+touch ./styles/styles.css
 ```
-Inside of the index.html, create an unordered list inside the first list item add an anchor tag 
-that links to the `vertical-align.html` page that we created in the same directory. Set the link
-display text to read: `Vertical Alignment`. 
+Inside of the index.html, add the html boilerplate to it, add a single div to the body tag and place some text inside of it that reads: `Hello World`.  Then, create an unordered list
 
-Open `vertical-align.html` and add the html boilerplate to it.   Then add a single div to the body tag
-and place some text inside of it that reads: `Hello World`.
 
-Link the stylesheet for `vertical.css` to the `vertical-align.html` file and add the following CSS:
+
+Link the stylesheet file and add the following CSS:
 
 ```css
 * {
@@ -200,7 +240,7 @@ I want my footer to lie along the bottom of my page. Once I've accomplished
 that, I want to evenly distribute the content boxes horizontally inside of the
 `<main>` element.
 
-Create another file inside the directory called `stuck-footer.html` and add your html boilerplate to it. Add the html below to the body.
+Lets get rid of our existing list and add some new content to our HTML file, then style it accordingly
 
 ```html
 <header>header</header>
@@ -347,44 +387,6 @@ assigned in this exercise.
 </details>
 -->
 
-## The Holy Grail Layout
-
-![holy grail layout](assets/holy-grail-layout.png)
-
-This is something you know well, even if you don't recognize the term. It
-describes a webpage with a header, footer, and three columns: a wide "main"
-column, a navigation column on the left, and an advertisement, site map, or
-extra info column along the right.
-
-Obviously, this layout won't work on tiny screens, unless you really like
-super-skinny columns. It's common to stack things on top of each other for
-mobile views to make one single column.
-
-Before flexbox or CSS grid, this involved a lot of pushing and shoving with dimensions and
-positioning. You would essentially have to write two completely separate
-stylesheets (one for mobile, and one for desktop), each to control the different
-layours.
-
-With flexbox, just change the `flex-direction` for smaller screen sizes, make
-any size / order adjustments on the sections of the page, and you're pretty much
-done!
-
-```css
-@media screen and (max-width: 600px) {
-  main {
-    flex-direction: column;
-  }
-
-  section {
-    order: 1;
-  }
-}
-```
-
-> A layout so holy,
-> [it has its own Wikipedia article](<https://en.wikipedia.org/wiki/Holy_Grail_(web_design)>).
-
-[Example](https://codepen.io/jme11/pen/WNvYQzW)
 
 ## CSS Grid
 
@@ -518,6 +520,7 @@ header {
 }
 ```
 
+
 Now onto our left column. That will only take up 1 column and one row, starting
 at row 2.
 
@@ -611,3 +614,4 @@ the page layout, and flexbox for smaller page components.
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
 1. All software code is licensed under GNU GPLv3. For commercial use or
    alternative licensing, please contact legal@ga.co.
+
