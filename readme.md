@@ -99,19 +99,18 @@ Inside of the index.html, add the html boilerplate to it, add a single div to th
 Link the stylesheet file and add the following CSS:
 
 ```css
-* {
-  box-sizing: border-box;
-}
+
 
 body {
-  background-color: #ccc;
-  color: #fff;
+  background-color: blue;
+  color: white;
   font-family: sans-serif;
   margin: 0 auto;
 }
 
 div {
-  background-color: #ff1493;
+  background-color: pink;
+  color: black;
   font-size: 2rem;
 }
 
@@ -152,8 +151,7 @@ just use Flexbox:
 
 ```css
 body {
-  background-color: #ccc;
-  color: #fff;
+
   font-family: sans-serif;
   margin: 0 auto;
   /* Add these: */
