@@ -236,42 +236,21 @@ different Flexbox properties and see how they work.
 
 ## Problem 2: Make the Footer Stick
 
-I want my footer to lie along the bottom of my page. Once I've accomplished
-that, I want to evenly distribute the content boxes horizontally inside of the
-`<main>` element.
-
-Lets get rid of our existing list and add some new content to our HTML file, then style it accordingly
-
-```html
-<header>header</header>
-<main>main</main>
-<footer>&copy; 2020 General Assembly</footer>
-```
-
-Create a css file called `styles/footer.css` and link it to your `stuck-footer.html` file.  Run the `stuck-footer.html` file with the Live Server.
-
 
 ```css
-body {
-  min-height: 100vh;
-}
 
-header,
-footer, 
-main {
-  padding: 2rem;
-}
 
 footer {
-  background: #000;
-  color: #fff;
+  position: relative;
+  bottom: 0;
 }
 ```
 
-Making the footer lie against the bottom of the screen is pretty easy: just use
-absolute or fixed positioning. However, using absolute or fixed positioning
-means everything else on the page ignores my footer. The text of `<main>` could
-easily run under the footer. We want the text to "push" the footer to the end of
+Making the footer lie against the bottom of the screen is pretty easy, and there are a number of ways to do it
+
+https://css-tricks.com/couple-takes-sticky-footer/
+
+The text of `<main>` could easily run under the footer. We want the text to "push" the footer to the end of
 the page.
 
 ### Flexbox to the Rescue Again
@@ -323,14 +302,6 @@ properties](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) not
 assigned in this exercise.
 
 
-### Some Helpful Resources
-
-- [CSS Tricks' Guide to
-  Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [A Visual Guide to CSS Flexbox
-  Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
-- [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
-- [Flexplorer](http://bennettfeely.com/flexplorer/)
 
 ### Recap
 
@@ -386,6 +357,16 @@ assigned in this exercise.
 
 </details>
 -->
+
+ Some Helpful Resources
+
+- [CSS Tricks' Guide to
+  Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [A Visual Guide to CSS Flexbox
+  Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
+- [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
+- [Flexplorer](http://bennettfeely.com/flexplorer/)
+
 
 
 ## CSS Grid
