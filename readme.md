@@ -102,12 +102,14 @@ body {
   color: white;
   font-family: sans-serif;
   margin: 0 auto;
+  height: 100vh;
 }
 
 div {
   background-color: pink;
   color: black;
   font-size: 2rem;
+  width: fit-content;
 }
 
 ```
@@ -121,6 +123,9 @@ likely dealt with:
 page.** 
 
 ### You Do: Center a `div`
+
+
+![Hello World centered](assets/helloworld.jpg)
 
 Take about **5 minutes** to try to get the div in this example centered like
 the image above. Make sure it's still centered vertically and horizontally when
@@ -150,6 +155,7 @@ body {
 
   font-family: sans-serif;
   margin: 0 auto;
+  height: 100vh;
   /* Add these: */
   display: flex;
   justify-content: center;
