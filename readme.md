@@ -126,6 +126,7 @@ page.**
 
 
 ![Hello World centered](assets/helloworld.png)
+
 Take about **5 minutes** to try to get the div in this example centered like
 the image above. Make sure it's still centered vertically and horizontally when
 you change the screen size.
