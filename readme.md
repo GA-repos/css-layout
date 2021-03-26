@@ -125,7 +125,10 @@ page.**
 ### You Do: Center a `div`
 
 
-![Hello World centered](assets/helloworld.png)
+![Hello World centered](assets/helloworld.png) {
+   width:150px;
+   height:100px;
+}
 
 Take about **5 minutes** to try to get the div in this example centered like
 the image above. Make sure it's still centered vertically and horizontally when
