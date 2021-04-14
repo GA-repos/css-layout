@@ -241,7 +241,7 @@ different Flexbox properties and see how they work.
 
 
 footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
 }
 ```
